@@ -1,0 +1,38 @@
+<link href="/styles.css" rel="stylesheet" type="text/css">
+
+<header class="profile_header">
+    <div class="profile_image">
+        <img src="{{avatar}}">
+    </div>
+    <div class="profile_header_text">
+        <h1>{{ name }}</h1>
+        <div class="profile_contanct_info">
+            <p>
+                
+                {{#address.city}}<span>{{ address.city }}</span>, {{/address.city}}<span>{{ address.country }} | </span>{{#job}}<span>{{job}}</span>, <span>{{company}}</span>{{/job}} {{^job}}<span class="looking"> Available for hire </span> {{/job}}
+            </p>
+            <p>
+                <span>{{email}}</span> | <span>{{phone}}</span>
+            </p>
+        </div>
+    </div>
+</header>
+<section class="profile_main">
+    <div class="profile_main_left">
+        {{#university}}
+        <div class="profile_education_label">
+            <h4>Education</h4>
+            <br>
+        </div>
+        {{/university}}
+        <div class="profile_skills_label">
+            <h4>Skills</h4>
+        </div>
+    </div>
+    <div class="profile_main_right">
+       {{#university}} <p>{{.}}</p><br> {{/university}}
+            {{#skills}}
+                <p>{{.}}</p>
+            {{/skills}}
+    </div>
+</section>

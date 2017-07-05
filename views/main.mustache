@@ -1,0 +1,25 @@
+<link href="/styles.css" rel="stylesheet" type ="text/css">
+<a href="/employed">Employed Users</a>
+<a href="/unemployed">Unemployed Users</a>
+<div class="usersContainer">
+    {{#users}}
+
+        <div class="userWrapper">
+            <a href="/user/{{_id}}">
+                <div class="user">
+                    <div class="userImage">
+                        <img src="{{avatar}}">
+                    </div>
+                    <h3 class="userName">{{name}}</h3>
+                    {{#job}}
+                        <p>{{job}}, {{company}}</p>
+                    {{/job}}
+                    {{^job}}
+                        <p class="looking">Looking for a job</p>
+                    {{/job}}
+                </div>   
+            </a>
+        </div>
+    {{/users}}
+</div>
+
